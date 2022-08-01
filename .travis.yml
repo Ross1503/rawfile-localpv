@@ -1,9 +1,6 @@
 os: linux
 dist: bionic
 language: minimal
-arch:
-  - amd64
-  - arm64
 jobs:
   include:
     - stage: build
