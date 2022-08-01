@@ -11,9 +11,9 @@ arch:
   - amd64
 jobs:
   include:
-    - stage: build
+    - name: build
       script: ./.ci/build.sh
-    - stage: e2e-test
+    - name: e2e-test
       install: ./.ci/e2e-test/setup.sh
       if: tag IS present OR commit_message =~ /perform-e2e/
       script: ./.ci/e2e-test/test.sh
@@ -24,5 +24,5 @@ jobs:
         - MINIKUBE_HOME=$HOME
         - CHANGE_MINIKUBE_NONE_USER=true
         - KUBECONFIG=$HOME/.kube/config
-    - stage: publish
+    - name: publish
       script: ./.ci/publish.sh
