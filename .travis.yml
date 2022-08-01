@@ -1,6 +1,14 @@
 os: linux
 dist: bionic
 language: minimal
+stage:
+  - build
+  - e2e-test
+  - publish
+
+arch:
+  - arm64
+  - amd64
 jobs:
   include:
     - stage: build
